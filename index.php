@@ -1,5 +1,6 @@
 <?php
 
+echo "Hello";
 $a = 4;
 $b = 6;
 
