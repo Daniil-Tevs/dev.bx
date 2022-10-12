@@ -4,11 +4,8 @@ declare(strict_types=1);
 /** @var array $movies */
 /** @var string $title */
 include "./movie/data.php";
+include "function.php";
 
-function printMessage(string $message):void
-{
-	echo $message . "\n";
-}
 function checkRightEnteredAge($age):void
 {
 	if( !is_numeric($age))
