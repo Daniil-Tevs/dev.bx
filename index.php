@@ -1,15 +1,10 @@
 <?php
-
-echo "Hello";
-$a = 4;
-$b = 6;
-
-$c = test($a, $b);
-echo $c;
-
-function test($a, $b)
+function sum(...$numbers)
 {
-    $c = $a + $b;
-
-    return $c;
+	$sum = 0;
+	foreach($numbers as $number)
+		$sum+=$number;
+	return $sum;
 }
+
+echo sum(1,2,3,4,5,6,7,8,9,10);
