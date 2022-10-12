@@ -1,36 +1,36 @@
 <?php
+declare(strict_types=1);
+
 /** @var array $movies */
 include "./movie/data.php";
+
+function printMessage(string $message):void
+{
+	echo $message . "\n";
+}
 
 $age = readline("Enter your age:");
 
 if( !is_numeric($age))
-{
-	echo "Invalid input: entered not a number";
-}
+	printMessage("Invalid input: entered not a number");
 else
 {
 	$age = (int) $age;
 	if($age <0 || $age > 120)
-	{
-		echo "Invalid input: age must be between 0 and 100";
-
-	}
+		printMessage("Invalid input: age must be between 0 and 120");
 	else
 	{
-		echo 'List of movies for your age:' . "\n";
+		printMessage('List of movies for your age:');
 		$index = 1;
 		foreach($movies as $movie)
 		{
 			if($age>=$movie["age_restriction"])
 			{
-				echo "{$index}. {$movie["title"]} ({$movie["release_year"]}), {$movie["duration"]} minutes, {$movie["age_restriction"]}+, Rating - {$movie["rating"]}"
-					. "\n";
+				printMessage("{$index}. {$movie["title"]} ({$movie["release_year"]}), {$movie["duration"]} minutes, {$movie["age_restriction"]}+, Rating - {$movie["rating"]}");
 				$index++;
 			}
 		}
 	}
-
 }
 
 
