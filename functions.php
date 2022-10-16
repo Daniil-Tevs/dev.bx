@@ -1,5 +1,5 @@
 <?php
-function printMessage(string $message):void
+function printMessage(string $message): void
 {
-	echo $message."\n";
+	echo $message . "\n";
 }
