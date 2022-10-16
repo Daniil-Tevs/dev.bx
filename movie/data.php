@@ -1,5 +1,4 @@
 <?php
-
 $title = 'List of movies for your age:';
 $movies = [
 	[
