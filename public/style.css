@@ -431,3 +431,16 @@
 	line-height: 28px;
 	color: #000;
 }
+
+.alert-find{
+	height: 50px;
+	width:100%;
+	border-radius: 10px;
+	margin: 60px;
+	color: white;
+	font-size: 24px;
+	background: rgba(255, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
