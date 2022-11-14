@@ -215,6 +215,8 @@
 }
 
 .movie-item h1 {
+	padding-bottom: 22px;
+
 	height: 36px;
 
 	font-size: 22px;
