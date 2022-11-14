@@ -11,7 +11,7 @@
 ?>
 <div class="movie-item">
 	<div class="movie-item-overlay">
-		<a href="<?= "/movie_info.php/?id=$id" ?>">ПОдробнее</a>
+		<a href="<?= "/movie_info.php?id=$id" ?>">Подробнее</a>
 	</div>
 	<div class="movie-img" style="background-image: url('<?= "/data/images/$id.jpg" ?>')"></div>
 	<div class="movie-info">
