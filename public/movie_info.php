@@ -5,24 +5,16 @@ require_once __DIR__ . '/../boot.php';
  * @var string $title
  * @var int $description_len
  * @var array $movies
- * @var array $genres
  * @var array $base_menu
  */
-$favour = array_pop($base_menu);
-foreach ($genres as $url => $genre)
-{
-	$base_menu['?gender=' . $url] = $genre;
-}
-$base_menu[] = $favour;
-
 
 if (isset($_GET['id']))
 {
 	$movie = get_movies_by_id((int)$_GET['id'],$movies);
 }
-elseif (isset($_GET['gender']))
+elseif (isset($_GET['genre']))
 {
-	redirect(sprintf('/gender=%s',$_GET['gender']));
+	redirect(sprintf('/genre=%s',$_GET['genre']));
 }
 else
 {
