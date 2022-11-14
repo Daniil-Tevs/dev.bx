@@ -6,10 +6,8 @@
 ?>
 
 <div class="content">
-	<?php
-	foreach ($movies as $movie): ?>
+	<?php foreach ($movies as $movie): ?>
 		<?= view('components/movie_card', $movie) ?>
-	<?php
-	endforeach ?>
+	<?php endforeach ?>
 </div>
 

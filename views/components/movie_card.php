@@ -1,11 +1,11 @@
 <?php
 /**
  * @var int $id
+ * @var int $duration
  * @var string $title
  * @var string $release_date
  * @var string $original_title
  * @var string $description
- * @var int $duration
  * @var array $genres
  */
 ?>
