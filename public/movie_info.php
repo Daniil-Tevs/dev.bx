@@ -16,7 +16,7 @@ foreach ($genres as $url => $genre)
 $base_menu[] = $favour;
 
 
-if (isset($_GET['id']) && is_int($_GET['id']))
+if (isset($_GET['id']))
 {
 	$movie = get_movies_by_id((int)$_GET['id'],$movies);
 }
