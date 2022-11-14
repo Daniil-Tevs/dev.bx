@@ -10,21 +10,25 @@
  */
 ?>
 <div class="movie-item">
-	<div class="movie-img" style="background-image: url('<?="/data/images/$id.jpg"?>')"></div>
+	<div class="movie-item-overlay">
+		<a href="<?= "/movie_info.php/?id=$id" ?>">ПОдробнее</a>
+	</div>
+	<div class="movie-img" style="background-image: url('<?= "/data/images/$id.jpg" ?>')"></div>
 	<div class="movie-info">
-		<h1><?=sprintf('%s(%s)',$title,$release_date)?></h1>
-		<h2><?=$original_title?></h2>
+		<h1><?= sprintf('%s(%s)', $title, $release_date) ?></h1>
+		<h2><?= $original_title ?></h2>
 		<div class="movie-description">
 			<?= format_description($description) ?>
 		</div>
 		<div class="movie-additional-info">
 			<div class="movie-time">
 				<img src='/data/icons/clock.png' alt="Time:">
-				<p><?= sprintf('%s мин. / %s',$duration,format_time($duration))?></p>
+				<p><?= sprintf('%s мин. / %s', $duration, format_time($duration)) ?></p>
 			</div>
 			<div class="movie-genre">
-				<?= implode(', ',array_slice($genres,0,3))?>
+				<?= implode(', ', array_slice($genres, 0, 3)) ?>
 			</div>
 		</div>
 	</div>
+
 </div>
