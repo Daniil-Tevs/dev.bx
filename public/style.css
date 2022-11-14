@@ -152,47 +152,47 @@
 	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-.movie-item .movie-img{
+.movie-item .movie-img {
 	height: 439px;
 	width: 100%;
-	background-image:url('../data/images/1.jpg');
-	background-position:center center;
-	background-size:cover;
+	background-image: url('../data/images/1.jpg');
+	background-position: center center;
+	background-size: cover;
 }
 
-.movie-item .movie-info{
+.movie-item .movie-info {
 	padding: 13px 20px 24px;
 }
 
-.movie-item h1{
-	color: #333333;
-	height:36px;
+.movie-item h1 {
+	color: #333;
+	height: 36px;
 	font-size: 22px;
 	font-weight: 600;
 	line-height: 30px;
 }
 
-.movie-item h2{
-	color: #999999;
+.movie-item h2 {
+	color: #999;
 	font-size: 14px;
 	font-weight: 600;
 	line-height: 25px;
 	text-align: left;
 	padding-bottom: 17px;
-	border-bottom: 1px solid #F2F2F2;
+	border-bottom: 1px solid #f2f2f2;
 }
 
-.movie-item .movie-description{
+.movie-item .movie-description {
 	height: 100px;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 20px;
 	text-align: left;
-	color: #333333;
+	color: #333;
 	padding-top: 23px;
 }
 
-.movie-item .movie-additional-info{
+.movie-item .movie-additional-info {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -200,8 +200,7 @@
 
 }
 
-.movie-item .movie-time
-{
+.movie-item .movie-time {
 	display: flex;
 	flex-direction: row;
 
@@ -209,14 +208,14 @@
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 22px;
-	color: #CCCCCC;
+	color: #ccc;
 }
 
-.movie-item .movie-time p{
+.movie-item .movie-time p {
 	margin-left: 3px;
 }
 
-.movie-item .movie-genre{
+.movie-item .movie-genre {
 	font-style: normal;
 	font-weight: 600;
 	font-size: 10px;
@@ -225,5 +224,181 @@
 	text-align: right;
 	text-transform: uppercase;
 
-	color: #CCCCCC;
+	color: #ccc;
+}
+
+.content .full_details {
+	padding: 40px 0 0 50px;
+}
+
+.movie-details {
+	margin-right: 47px;
+	width: 100%;
+	background: #fff;
+	height: fit-content;
+	padding-top: 35px;
+	padding-left: 40px;
+	padding-right: 41px;
+}
+
+.movie-details .ru-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-right: 23px;
+}
+
+.ru-title h1 {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 65px;
+	color: #333;
+}
+
+.ru-title img {
+	height: 36px;
+	width: 45px;
+}
+
+.movie-details .en-title {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #ccc;
+}
+
+.en-title h2 {
+
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 33px;
+	color: #999;
+}
+
+.en-title .min-age {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 12px;
+	width: 30px;
+	height: 20px;
+	border: 3px solid #ccc;
+	border-radius: 7px;
+	color: #ccc;
+}
+
+.base-section {
+	display: flex;
+	flex-direction: row;
+	padding-top: 32px;
+	padding-bottom: 36px;
+}
+
+.base-section img {
+	width: 469px;
+	height: 730px;
+}
+
+.base-section h2 {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 33px;
+	color: #333;
+}
+
+.description-section {
+	margin-left: 45px;
+	display: flex;
+	flex-direction: column;
+}
+
+.rating {
+	height: 55px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.square {
+	width: 17px;
+	height: 17px;
+	background: #f2f2f2;
+	border: 5px solid #fff;
+}
+
+.active-square {
+	background: #e78818;
+}
+
+.result {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-left: 12px;
+
+	height: 55px;
+	width: 55px;
+	border-radius: 90px;
+
+	font-style: normal;
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 30px;
+
+	color: #fff;
+	background: #e78818;
+}
+
+.base-info {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.base-info h2 {
+	margin-bottom: 22px;
+}
+
+.year, .directors, .actors {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 15px;
+}
+
+.actors {
+	margin-bottom: 25px;
+}
+
+.base-info h3 {
+	width: 160px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	color: #666;
+
+}
+
+.base-info p {
+	margin-left: 50px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	color: #000;
+}
+
+.full-description p {
+	padding-top: 15px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	color: #000;
 }
