@@ -1,15 +1,15 @@
 <?php
 /**
  * @var int $id
+ * @var int $rating
+ * @var int $age_restriction
+ * @var int $duration
  * @var string $title
  * @var string $original_title
  * @var string $release_date
- * @var int $rating
- * @var int $age_restriction
+ * @var string $director
  * @var string $description
- * @var int $duration
  * @var array $genres
- * @var array $director
  * @var array $cast
  */
 ?>
@@ -32,7 +32,7 @@
 			</div>
 			<div class="directors">
 				<h3>Режиссер:</h3>
-				<p><?= implode(", ", $director) ?></p>
+				<p><?= $director ?></p>
 			</div>
 			<div class="actors">
 				<h3>В главных ролях:</h3>
