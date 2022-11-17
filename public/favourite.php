@@ -2,7 +2,6 @@
 
 require_once __DIR__ . '/../boot.php';
 /**
- * @var int $description_len
  * @var string $title
  * @var array $base_menu
  */
