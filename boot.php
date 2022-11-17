@@ -16,7 +16,7 @@ $fav_title = array_pop($base_menu);
 
 foreach ($genres as $url => $genre)
 {
-	$base_menu['?genre=' . $genre] = $genre;
+	$base_menu['?genre=' . $url] = $genre;
 }
 
 $base_menu[$fav_key] = $fav_title;
