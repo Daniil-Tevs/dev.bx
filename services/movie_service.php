@@ -34,3 +34,14 @@ function get_movies_by_title_of_genre(string $genre, array $movies): array
 	}
 	return $movies_of_genre;
 }
+
+function get_movie_id_by_title(string $title, array $movies): int{
+	foreach ($movies as $movie)
+	{
+		if ($movie['title'] === $title || $movie['original_title'] === $title)
+		{
+			return $movie['id'];
+		}
+	}
+	return -1;
+}
