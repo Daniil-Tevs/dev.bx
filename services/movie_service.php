@@ -22,7 +22,7 @@ function get_movies_by_id(int $id, array $movies): array
 	return [];
 }
 
-function get_movies_by_genre(string $genre, array $movies): array
+function get_movies_by_title_of_genre(string $genre, array $movies): array
 {
 	$movies_of_genre = [];
 	foreach ($movies as $movie)
