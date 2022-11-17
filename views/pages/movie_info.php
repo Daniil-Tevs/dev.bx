@@ -17,6 +17,6 @@
 			<?= view('components/description_part_of_movie', $movies) ?>
 		</div>
 	<?php else: ?>
-		<div class="alert-find">This movie is don't find</div>
+		<div class="alert alert-find">This movie is don't find</div>
 	<?php endif ?>
 </div>
