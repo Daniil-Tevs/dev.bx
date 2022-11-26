@@ -35,3 +35,9 @@ function get_db_connection()
 
 	return $connection;
 }
+
+function sql_protect_str(string $data):string
+{
+	$connection = get_db_connection();
+	return mysqli_real_escape_string($connection,$data);
+}
