@@ -17,16 +17,11 @@ function get_movies()
 	return ($movies) ? $movies : [];
 }
 
-function get_movies_by_id(int $id, array $movies): array
+function get_movie_by_id(int $id)
 {
-	foreach ($movies as $movie)
-	{
-		if ($movie['id'] === $id)
-		{
-			return $movie;
-		}
-	}
-	return [];
+	$connection = get_db_connection();
+	$movie = mysqli_query($connection, "SELECT * FROM movie WHERE ID = '$id'");
+	return ($movie) ?: [];
 }
 
 function get_movies_by_genre_url(string $genre)
@@ -42,14 +37,10 @@ function get_movies_by_genre_url(string $genre)
 	return ($movies_of_genre) ?: [];
 }
 
-function get_movie_id_by_title(string $title, array $movies): int
+function get_movie_like_title(string $title)
 {
-	foreach ($movies as $movie)
-	{
-		if ($movie['title'] === $title || $movie['original_title'] === $title)
-		{
-			return $movie['id'];
-		}
-	}
-	return -1;
+	$title = sql_protect_str($title);
+	$connection = get_db_connection();
+	$movies = mysqli_query($connection, "SELECT * FROM movie WHERE TITLE LIKE '%$title%' OR ORIGINAL_TITLE LIKE '%$title%'");
+	return ($movies) ? $movies : [];
 }
