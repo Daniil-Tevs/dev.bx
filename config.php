@@ -1,7 +1,10 @@
 <?php
 
-$title = 'BITFLIX';
-$base_menu = [
-	'/' => 'Главная',
-	'/favourite.php' => 'Избранное',
+return [
+	'APP_NAME' => 'BITFLIX',
+	'BASE_MENU' => [
+		'/' => 'Главная',
+		'/favourite.php' => 'Избранное',
+	],
+
 ];
