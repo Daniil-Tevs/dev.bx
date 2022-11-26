@@ -2,32 +2,32 @@
 
 require_once __DIR__ . '/../boot.php';
 /**
- * @var string $title
- * @var array $movies
- * @var array $genres
  * @var array $base_menu
  */
+
+$movies = get_movies();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	$movie_title = trim($_POST['title']);
 	if (strlen($movie_title) > 0)
 	{
-		$movie_id = get_movie_id_by_title($movie_title,$movies);
-		redirect('/movie_info.php'."?id=$movie_id");
+		$movies = get_movie_like_title($movie_title);
 	}
 	else
 	{
+		$movies = [];
 		redirect('/');
 	}
 }
+
 if (isset($_GET['genre']))
 {
-	$genre = get_title_of_genre((string)$_GET['genre'],$genres);
-	$movies = get_movies_by_title_of_genre($genre, $movies);
+	$movies = get_movies_by_genre_url($_GET['genre']);
 }
 
 echo view('layout', [
-	'title' => $title,
+	'title' => option('APP_NAME'),
 	'menu' => $base_menu,
 	'content' => view('pages/index', [
 		'movies' => $movies,
