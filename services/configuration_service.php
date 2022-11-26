@@ -7,7 +7,17 @@ function option(string $name, $default_value = null)
 
 	if ($config === null)
 	{
-		$config = require ROOT . '/config.php';
+		$master_config = require ROOT . '/config.php';
+		if(file_exists(ROOT . '/config_local.php'))
+		{
+			$local_config = require ROOT . '/config_local.php';
+		}
+		else
+		{
+			$local_config = [];
+		}
+
+		$config = array_merge($master_config,$local_config);
 	}
 
 	if (array_key_exists($name, $config))
