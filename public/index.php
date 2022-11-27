@@ -1,9 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../boot.php';
-/**
- * @var array $base_menu
- */
 
 $movies = get_movies();
 
@@ -16,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 	}
 	else
 	{
-		$movies = [];
 		redirect('/');
 	}
 }
@@ -28,7 +24,7 @@ if (isset($_GET['genre']))
 
 echo view('layout', [
 	'title' => option('APP_NAME'),
-	'menu' => $base_menu,
+	'menu' => get_base_menu(),
 	'content' => view('pages/index', [
 		'movies' => $movies,
 	]),
