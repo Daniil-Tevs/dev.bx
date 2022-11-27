@@ -1,47 +1,44 @@
 <?php
 /**
- * @var int $id
- * @var int $rating
- * @var int $age_restriction
- * @var int $duration
- * @var string $title
- * @var string $original_title
- * @var string $release_date
- * @var string $director
- * @var string $description
- * @var array $genres
- * @var array $cast
+ * @var int $ID
+ * @var int $RATING
+ * @var int $AGE_RESTRICTION
+ * @var int $DURATION
+ * @var string $TITLE
+ * @var string $ORIGINAL_TITLE
+ * @var string $RELEASE_DATE
+ * @var int $DIRECTOR_ID
+ * @var string $DESCRIPTION
+ * @var array $CAST
  */
 ?>
 <div class="base-section">
-	<img src="/data/images/<?= $id ?>.jpg" alt="poster">
+	<img src="/data/images/<?= $ID ?>.jpg" alt="poster">
 	<div class="description-section">
 		<div class="rating">
-			<?php
-			for ($i = 1; $i <= 10; $i++): ?>
-				<div class="square <?= ($i <= floor($rating)) ? 'active-square' : '' ?>"></div>
-			<?php
-			endfor; ?>
-			<div class="result"><?= $rating ?></div>
+			<?php for ($i = 1; $i <= 10; $i++): ?>
+				<div class="square <?= ($i <= floor($RATING)) ? 'active-square' : '' ?>"></div>
+			<?php endfor; ?>
+			<div class="result"><?= $RATING ?></div>
 		</div>
 		<div class="base-info">
 			<h2>О фильме</h2>
 			<div class="year">
 				<h3>Год производства:</h3>
-				<p><?= $release_date ?></p>
+				<p><?= $RELEASE_DATE ?></p>
 			</div>
 			<div class="directors">
 				<h3>Режиссер:</h3>
-				<p><?= $director ?></p>
+				<p><?= get_director_name_by_id($DIRECTOR_ID) ?></p>
 			</div>
 			<div class="actors">
 				<h3>В главных ролях:</h3>
-				<p><?= implode(", ", $cast) ?></p>
+				<p><?= implode(", ", get_actors_names_by_movie_id($ID)) ?></p>
 			</div>
 		</div>
 		<div class="full-description">
 			<h2>О фильме</h2>
-			<p><?= $description ?></p>
+			<p><?= $DESCRIPTION ?></p>
 		</div>
 	</div>
 </div>
