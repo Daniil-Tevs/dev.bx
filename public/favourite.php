@@ -1,10 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../boot.php';
-/**
- * @var string $title
- * @var array $base_menu
- */
 
 if (isset($_GET['genre']))
 {
@@ -12,7 +8,7 @@ if (isset($_GET['genre']))
 }
 
 echo view('layout', [
-	'title' => $title,
-	'menu' => $base_menu,
+	'title' => option('APP_NAME'),
+	'menu' => get_base_menu(),
 	'content' => view('/pages/favourite', []),
 ]);
