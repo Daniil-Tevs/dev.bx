@@ -20,7 +20,7 @@
 	</div>
 	<div class="wrapper">
 		<div class="header">
-			<form action="/" method="post">
+			<form action="/" method="get">
 				<input type="text" name="title" placeholder="Поиск по каталогу..." class="input-search">
 				<button type="submit" class="button-search">ИСКАТЬ</button>
 			</form>
