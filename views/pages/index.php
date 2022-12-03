@@ -7,7 +7,7 @@
 
 <div class="content">
 	<?php foreach ($movies as $movie): ?>
-		<?= view('components/movie_card', $movie) ?>
+		<?= view('components/movie_card', ['movie' => $movie]) ?>
 	<?php endforeach ?>
 </div>
 
