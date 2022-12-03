@@ -2,24 +2,27 @@
 
 require_once __DIR__ . '/../boot.php';
 
-$movies = get_movies();
+$movies = [];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST')
+if (isset($_GET['title']))
 {
-	$movie_title = trim($_POST['title']);
+	$movie_title = trim($_GET['title']);
 	if (strlen($movie_title) > 0)
 	{
-		$movies = get_movie_like_title($movie_title);
+		$movies = get_movies_like_title($movie_title);
 	}
 	else
 	{
 		redirect('/');
 	}
 }
-
-if (isset($_GET['genre']))
+elseif (isset($_GET['genre']))
 {
-	$movies = get_movies_by_genre_url($_GET['genre']);
+	$movies = get_movies_by_genre_code($_GET['genre']);
+}
+else
+{
+	$movies = get_movies_with_full_info();
 }
 
 echo view('layout', [
