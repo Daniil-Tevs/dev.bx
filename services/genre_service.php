@@ -23,21 +23,23 @@ function get_genre_id_by_code(string $url): int
 	return ($id) ? $id['ID'] : -1;
 }
 
-function get_genres_by_movie_id(int $id): array
+function get_genres_by_movies_ids(array $movies_ids): array
 {
 	$connection = get_db_connection();
-	$genres = mysqli_query($connection,
-		"SELECT g.NAME FROM movie mov
-               INNER JOIN genre g ON g.ID IN (SELECT GENRE_ID FROM movie_genre WHERE MOVIE_ID = mov.ID)
-               WHERE mov.ID = $id");
-
+	$query = sprintf("SELECT mg.MOVIE_ID,g.NAME FROM movie_genre mg
+							INNER JOIN genre g ON mg.GENRE_ID = g.ID AND mg.MOVIE_ID IN (%s)
+							ORDER BY mg.MOVIE_ID", implode(',', $movies_ids));
+	$genres = mysqli_query($connection, $query);
 	if (!$genres)
 	{
-		throw new Exception("Error: getting genres from db by this movie id {$id} - return false");
+		throw new Exception("Error: getting genres from db by this movies ids - return false");
 	}
-
-	$genres = mysqli_fetch_all($genres);
-	return array_map(fn ($genre): string => $genre[0], $genres);
+	$genres_sorted_by_movies_ids = [];
+	while ($genre = mysqli_fetch_assoc($genres))
+	{
+		$genres_sorted_by_movies_ids[$genre['MOVIE_ID']][] = $genre['NAME'];
+	}
+	return $genres_sorted_by_movies_ids;
 }
 
 function get_genres_sorted_by_id_movies(): array
